@@ -304,7 +304,72 @@ body {
     }
 }
 
-/* --- 3. NEWS SECTION --- */
+/* --- 3. PIONEERS SECTION --- */
+.pioneers {
+    padding: 100px 0;
+    background: #F5F5F0;
+}
+
+.pioneers-content {
+    margin-bottom: 60px;
+}
+
+.pioneers-text {
+    max-width: 800px;
+}
+
+.pioneers-subtitle {
+    color: #666;
+    font-weight: 500;
+    font-size: 0.95rem;
+    margin-bottom: 20px;
+    letter-spacing: 0.5px;
+}
+
+.pioneers-title {
+    font-size: 3.5rem;
+    font-weight: 700;
+    line-height: 1.2;
+    margin-bottom: 30px;
+    color: var(--text-dark);
+}
+
+.pioneers-description {
+    font-size: 1.05rem;
+    line-height: 1.7;
+    color: #666;
+    margin-bottom: 35px;
+    max-width: 700px;
+}
+
+.pioneers-images {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 30px;
+    margin-top: 40px;
+}
+
+.pioneer-img-left,
+.pioneer-img-right {
+    border-radius: var(--card-radius);
+    overflow: hidden;
+    height: 450px;
+}
+
+.pioneer-img-left img,
+.pioneer-img-right img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s ease;
+}
+
+.pioneer-img-left:hover img,
+.pioneer-img-right:hover img {
+    transform: scale(1.05);
+}
+
+/* --- 4. NEWS SECTION --- */
 .news {
     padding: 100px 0;
     background: white;
@@ -394,7 +459,7 @@ body {
     line-height: 1.6;
 }
 
-/* --- 4. FAQ SECTION --- */
+/* --- 5. FAQ SECTION --- */
 .faq {
     background-color: var(--bg-dark-green);
     color: white;
