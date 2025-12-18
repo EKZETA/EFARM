@@ -14,7 +14,7 @@ Follow these steps to get the project running on your local machine:
 
 1.  **Clone the Repository**
     ```bash
-    git clone [https://github.com/EKZETA/EFARM.git](https://github.com/EKZETA/EFARM.git)
+    git clone https://github.com/EKZETA/EFARM.git
     cd efarm
     ```
 
