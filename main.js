@@ -41,6 +41,30 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   });
 
+  function smoothScrollTo(target, duration) {
+    const start = window.pageYOffset;
+    const distance = target - start;
+    let startTime = null;
+
+    function animation(currentTime) {
+      if (startTime === null) startTime = currentTime;
+      const timeElapsed = currentTime - startTime;
+      const progress = Math.min(timeElapsed / duration, 1);
+      
+      const ease = progress < 0.5
+        ? 4 * progress * progress * progress
+        : 1 - Math.pow(-2 * progress + 2, 3) / 2;
+      
+      window.scrollTo(0, start + distance * ease);
+      
+      if (timeElapsed < duration) {
+        requestAnimationFrame(animation);
+      }
+    }
+
+    requestAnimationFrame(animation);
+  }
+
   const navLinks = document.querySelectorAll(".nav-menu a");
   navLinks.forEach((link) => {
     link.addEventListener("click", (e) => {
@@ -55,10 +79,10 @@ document.addEventListener("DOMContentLoaded", () => {
           navLinks.forEach((l) => l.classList.remove("active"));
           link.classList.add("active");
           
-          targetSection.scrollIntoView({ 
-            behavior: "smooth",
-            block: "start"
-          });
+          const navbarHeight = document.querySelector(".navbar").offsetHeight;
+          const targetPosition = targetSection.getBoundingClientRect().top + window.pageYOffset - navbarHeight;
+          
+          smoothScrollTo(targetPosition, 1200);
         }
       }
     });
