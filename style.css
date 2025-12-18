@@ -1,4 +1,3 @@
-/* --- 1. RESET & VARIABLES --- */
 :root {
     --bg-dark-green: #184D35;
     --bg-black: #0D1313;
@@ -17,13 +16,16 @@
     font-family: var(--font-main);
 }
 
+html {
+    scroll-behavior: smooth;
+}
+
 body {
     background-color: #F8F9FA;
     color: var(--text-dark);
     overflow-x: hidden;
 }
 
-/* Utility Classes */
 .container {
     max-width: 1240px;
     margin: 0 auto;
@@ -63,7 +65,6 @@ body {
     font-weight: bold;
 }
 
-/* --- 2. NAVIGATION BAR --- */
 .navbar {
     position: fixed;
     top: 0;
@@ -109,15 +110,12 @@ body {
     font-weight: 500;
     font-size: 0.95rem;
     transition: opacity 0.3s;
+    opacity: 0.9;
 }
 
 .nav-menu a:hover,
 .nav-menu a.active {
     opacity: 1;
-}
-
-.nav-menu a {
-    opacity: 0.9;
 }
 
 .btn-contact {
@@ -137,7 +135,32 @@ body {
     border-color: rgba(255, 255, 255, 0.5);
 }
 
-/* --- 3. HERO SECTION --- */
+.hamburger {
+    display: none;
+    flex-direction: column;
+    gap: 5px;
+    cursor: pointer;
+}
+
+.hamburger span {
+    width: 25px;
+    height: 3px;
+    background: white;
+    transition: all 0.3s ease;
+}
+
+.hamburger.active span:nth-child(1) {
+    transform: rotate(45deg) translate(8px, 8px);
+}
+
+.hamburger.active span:nth-child(2) {
+    opacity: 0;
+}
+
+.hamburger.active span:nth-child(3) {
+    transform: rotate(-45deg) translate(7px, -7px);
+}
+
 .hero {
     position: relative;
     height: 100vh;
@@ -196,7 +219,6 @@ body {
     box-shadow: 0 8px 20px rgba(210, 240, 57, 0.4);
 }
 
-/* Badges */
 .badge-12b {
     position: absolute;
     top: -20px;
@@ -251,7 +273,6 @@ body {
     margin-left: 0;
 }
 
-/* Tags */
 .tags-container {
     position: absolute;
     bottom: 0px;
@@ -274,7 +295,6 @@ body {
     border: 1px solid rgba(255, 255, 255, 0.2);
 }
 
-/* Scroll Indicator */
 .scroll-indicator {
     position: absolute;
     bottom: 40px;
@@ -304,7 +324,6 @@ body {
     }
 }
 
-/* --- 3. PIONEERS SECTION --- */
 .pioneers {
     padding: 100px 0;
     background: #F5F5F0;
@@ -369,7 +388,6 @@ body {
     transform: scale(1.05);
 }
 
-/* --- 4. STATISTICS SECTION --- */
 .stats {
     background-color: var(--bg-dark-green);
     padding: 80px 0;
@@ -402,7 +420,6 @@ body {
     letter-spacing: 0.3px;
 }
 
-/* --- 5. SERVICES SECTION --- */
 .services {
     padding: 100px 0;
     background: #FAFAF8;
@@ -532,7 +549,6 @@ body {
     object-fit: cover;
 }
 
-/* --- 6. NEWS SECTION --- */
 .news {
     padding: 100px 0;
     background: white;
@@ -622,7 +638,6 @@ body {
     line-height: 1.6;
 }
 
-/* --- 7. FAQ SECTION --- */
 .faq {
     background-color: var(--bg-dark-green);
     color: white;
@@ -656,7 +671,6 @@ body {
     font-size: 1rem;
 }
 
-/* Accordion Styling */
 .accordion {
     display: flex;
     flex-direction: column;
@@ -726,7 +740,6 @@ body {
     }
 }
 
-/* --- 8. CTA NEWSLETTER SECTION --- */
 .cta-newsletter {
     position: relative;
     padding: 120px 0;
@@ -835,7 +848,49 @@ body {
     font-weight: bold;
 }
 
-/* --- 9. FOOTER SECTION --- */
+.contact-form {
+    background: #F5F5F0;
+    padding: 50px;
+    border-radius: var(--card-radius);
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+}
+
+.form-group {
+    margin-bottom: 25px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 10px;
+    font-weight: 600;
+    color: var(--text-dark);
+    font-size: 0.95rem;
+}
+
+.form-group input,
+.form-group textarea {
+    width: 100%;
+    padding: 14px 20px;
+    border: 2px solid #E0E0E0;
+    border-radius: 12px;
+    font-size: 1rem;
+    font-family: var(--font-main);
+    transition: all 0.3s ease;
+    background: white;
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+    outline: none;
+    border-color: var(--accent-lime);
+    box-shadow: 0 0 0 3px rgba(210, 240, 57, 0.1);
+}
+
+.form-group textarea {
+    resize: vertical;
+    min-height: 120px;
+}
+
 footer {
     position: relative;
     background-color: #0D1313;
@@ -950,4 +1005,281 @@ footer {
     pointer-events: none;
     white-space: nowrap;
     overflow: hidden;
+}
+
+.custom-notification {
+    position: fixed;
+    top: 100px;
+    right: 30px;
+    background: white;
+    padding: 20px 24px;
+    border-radius: 12px;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.12);
+    z-index: 10000;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+    min-width: 320px;
+    max-width: 500px;
+    transform: translateX(calc(100% + 50px));
+    transition: transform 0.3s ease;
+}
+
+.custom-notification.show {
+    transform: translateX(0);
+}
+
+.custom-notification.success {
+    border-left: 4px solid var(--accent-lime);
+}
+
+.custom-notification.error {
+    border-left: 4px solid #ff4444;
+}
+
+.notification-content {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    flex: 1;
+}
+
+.notification-icon {
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+    font-size: 1.2rem;
+    flex-shrink: 0;
+}
+
+.custom-notification.success .notification-icon {
+    background: var(--accent-lime);
+    color: var(--text-dark);
+}
+
+.custom-notification.error .notification-icon {
+    background: #ff4444;
+    color: white;
+}
+
+.notification-message {
+    color: var(--text-dark);
+    font-size: 0.95rem;
+    line-height: 1.4;
+}
+
+.notification-close {
+    background: transparent;
+    border: none;
+    font-size: 1.5rem;
+    color: #999;
+    cursor: pointer;
+    padding: 0;
+    width: 24px;
+    height: 24px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: color 0.2s;
+    flex-shrink: 0;
+}
+
+.notification-close:hover {
+    color: var(--text-dark);
+}
+
+@media (max-width: 768px) {
+    .nav-container {
+        padding: 0 20px;
+    }
+
+    .nav-menu {
+        position: fixed;
+        left: -100%;
+        top: 72px;
+        flex-direction: column;
+        background-color: rgba(0, 0, 0, 0.95);
+        width: 100%;
+        text-align: center;
+        transition: left 0.3s ease;
+        gap: 0;
+        padding: 20px 0;
+    }
+
+    .nav-menu.active {
+        left: 0;
+    }
+
+    .nav-menu li {
+        padding: 15px 0;
+    }
+
+    .hamburger {
+        display: flex;
+    }
+
+    .btn-contact {
+        display: none;
+    }
+
+    .hero {
+        padding: 0 20px;
+        min-height: 600px;
+    }
+
+    .hero h1 {
+        font-size: 2.5rem;
+    }
+
+    .hero p {
+        font-size: 0.95rem;
+        max-width: 100%;
+    }
+
+    .badge-12b,
+    .badge-120k,
+    .tags-container {
+        display: none;
+    }
+
+    .pioneers {
+        padding: 60px 0;
+    }
+
+    .pioneers-title {
+        font-size: 2rem;
+    }
+
+    .pioneers-images {
+        grid-template-columns: 1fr;
+    }
+
+    .pioneer-img-left,
+    .pioneer-img-right {
+        height: 300px;
+    }
+
+    .stats-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 30px;
+    }
+
+    .stat-number {
+        font-size: 2.5rem;
+    }
+
+    .services {
+        padding: 60px 0;
+    }
+
+    .services-header {
+        grid-template-columns: 1fr;
+        gap: 30px;
+    }
+
+    .services-title {
+        font-size: 2rem;
+    }
+
+    .service-name {
+        font-size: 1.1rem;
+    }
+
+    .service-number {
+        font-size: 1.2rem;
+    }
+
+    .service-image {
+        height: 250px;
+    }
+
+    .news {
+        padding: 60px 0;
+    }
+
+    .news-header {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 20px;
+    }
+
+    .news-title h2 {
+        font-size: 2rem;
+    }
+
+    .news-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .faq {
+        padding: 60px 0;
+    }
+
+    .faq-wrapper {
+        grid-template-columns: 1fr;
+        gap: 40px;
+    }
+
+    .faq-content h2 {
+        font-size: 2rem;
+    }
+
+    .cta-newsletter {
+        padding: 80px 0;
+    }
+
+    .cta-title {
+        font-size: 2.5rem;
+    }
+
+    .newsletter-form {
+        flex-direction: column;
+        padding: 10px;
+        gap: 10px;
+    }
+
+    .email-input {
+        width: 100%;
+    }
+
+    .btn-subscribe {
+        width: 100%;
+        justify-content: center;
+    }
+
+    .contact-form {
+        padding: 30px 20px;
+    }
+
+    .footer-top {
+        grid-template-columns: 1fr;
+        gap: 40px;
+    }
+
+    .footer-nav {
+        grid-template-columns: 1fr;
+        gap: 30px;
+    }
+
+    .footer-bottom {
+        flex-direction: column;
+        gap: 20px;
+        text-align: center;
+    }
+
+    .legal-links {
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    .custom-notification {
+        right: 10px;
+        left: 10px;
+        min-width: auto;
+    }
 }

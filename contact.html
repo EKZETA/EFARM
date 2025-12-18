@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Contact Us - Efarm</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <nav class="navbar">
+      <div class="nav-container">
+        <div class="nav-logo">
+          <svg
+            width="24"
+            height="24"
+            viewBox="0 0 24 24"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <rect width="24" height="24" rx="4" fill="white" />
+            <path d="M7 7h10v10H7z" fill="#D2F039" />
+          </svg>
+          <span>Efarm</span>
+        </div>
+        <ul class="nav-menu">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="index.html#about">About Us</a></li>
+          <li><a href="index.html#services">Services</a></li>
+          <li><a href="index.html#blog">Blog</a></li>
+        </ul>
+        <button class="btn-contact" style="pointer-events: none; opacity: 0.6;">Contact Us</button>
+        <div class="hamburger">
+          <span></span>
+          <span></span>
+          <span></span>
+        </div>
+      </div>
+    </nav>
+
+    <header class="hero" style="height: 60vh; min-height: 500px;">
+      <div class="hero-content">
+        <h1 style="font-size: 3.5rem;">Get In Touch</h1>
+        <p style="max-width: 700px;">
+          Have questions about our services? Want to learn how Efarm can help your agricultural business? We'd love to hear from you.
+        </p>
+      </div>
+    </header>
+
+    <section class="pioneers" style="background: white;">
+      <div class="container">
+        <div style="max-width: 800px; margin: 0 auto;">
+          <div style="text-align: center; margin-bottom: 50px;">
+            <h5 class="pioneers-subtitle" style="text-align: center;">Contact Form</h5>
+            <h2 class="pioneers-title" style="font-size: 3rem;">Send Us a Message</h2>
+            <p class="pioneers-description" style="text-align: center; margin: 0 auto;">
+              Fill out the form below and our team will get back to you within 24 hours.
+            </p>
+          </div>
+
+          <form id="contactForm" class="contact-form">
+            <div class="form-group">
+              <label for="name">Full Name</label>
+              <input type="text" id="name" name="name" required placeholder="Enter your full name">
+            </div>
+
+            <div class="form-group">
+              <label for="email">Email Address</label>
+              <input type="email" id="email" name="email" required placeholder="Enter your email">
+            </div>
+
+            <div class="form-group">
+              <label for="phone">Phone Number</label>
+              <input type="tel" id="phone" name="phone" placeholder="Enter your phone number (optional)">
+            </div>
+
+            <div class="form-group">
+              <label for="subject">Subject</label>
+              <input type="text" id="subject" name="subject" required placeholder="What is this regarding?">
+            </div>
+
+            <div class="form-group">
+              <label for="message">Message</label>
+              <textarea id="message" name="message" rows="6" required placeholder="Tell us more about your inquiry..."></textarea>
+            </div>
+
+            <button type="submit" class="btn-lime" style="width: 100%; justify-content: center; font-size: 1.1rem; padding: 16px 32px;">
+              Send Message
+              <span class="icon-arrow">→</span>
+            </button>
+          </form>
+        </div>
+      </div>
+    </section>
+
+    <section class="stats">
+      <div class="container">
+        <div style="text-align: center; margin-bottom: 50px;">
+          <h2 style="font-size: 2.5rem; color: white; margin-bottom: 15px;">Other Ways to Reach Us</h2>
+          <p style="color: rgba(255, 255, 255, 0.8); font-size: 1.1rem;">We're here to help you succeed</p>
+        </div>
+        
+        <div class="stats-grid">
+          <div class="stat-item">
+            <div style="font-size: 3rem; margin-bottom: 15px;">📧</div>
+            <div class="stat-label" style="font-size: 1.1rem; margin-bottom: 8px;">Email Us</div>
+            <div style="color: var(--accent-lime); font-size: 1rem;">info@efarm.com</div>
+          </div>
+          <div class="stat-item">
+            <div style="font-size: 3rem; margin-bottom: 15px;">📞</div>
+            <div class="stat-label" style="font-size: 1.1rem; margin-bottom: 8px;">Call Us</div>
+            <div style="color: var(--accent-lime); font-size: 1rem;">+1 (555) 123-4567</div>
+          </div>
+          <div class="stat-item">
+            <div style="font-size: 3rem; margin-bottom: 15px;">📍</div>
+            <div class="stat-label" style="font-size: 1.1rem; margin-bottom: 8px;">Visit Us</div>
+            <div style="color: var(--accent-lime); font-size: 1rem;">123 Farm Road, Green Valley</div>
+          </div>
+          <div class="stat-item">
+            <div style="font-size: 3rem; margin-bottom: 15px;">⏰</div>
+            <div class="stat-label" style="font-size: 1.1rem; margin-bottom: 8px;">Business Hours</div>
+            <div style="color: var(--accent-lime); font-size: 1rem;">Mon-Fri: 9AM - 6PM</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="cta-newsletter">
+      <div class="cta-overlay"></div>
+      <div class="container">
+        <div class="cta-content">
+          <h2 class="cta-title">Stay Updated</h2>
+          <p class="cta-subtitle">
+            Subscribe to our newsletter for the latest updates, tips, and innovations in agriculture.
+          </p>
+          <form class="newsletter-form">
+            <input
+              type="email"
+              placeholder="Email address"
+              class="email-input"
+              required
+            />
+            <button type="submit" class="btn-subscribe">
+              Subscribe
+              <span class="subscribe-icon">→</span>
+            </button>
+          </form>
+        </div>
+      </div>
+    </section>
+
+    <footer>
+      <div class="container">
+        <div class="footer-top">
+          <div class="footer-brand">
+            <div class="footer-logo">E</div>
+            <p class="footer-description">
+              We are dedicated to transforming the future of agriculture through
+              technology, sustainability, and innovation.
+            </p>
+          </div>
+
+          <div class="footer-nav">
+            <div class="nav-col">
+              <h4>Company</h4>
+              <ul>
+                <li><a href="#">Features</a></li>
+                <li><a href="#">Pricing</a></li>
+                <li><a href="about.html">About Us</a></li>
+                <li><a href="contact.html">Contact</a></li>
+              </ul>
+            </div>
+            <div class="nav-col">
+              <h4>Resource</h4>
+              <ul>
+                <li><a href="#">Blog</a></li>
+                <li><a href="#">Customer Stories</a></li>
+                <li><a href="#">Information</a></li>
+                <li><a href="#">Legal</a></li>
+              </ul>
+            </div>
+            <div class="nav-col">
+              <h4>Help</h4>
+              <ul>
+                <li><a href="#">FAQ</a></li>
+                <li><a href="#">Help Center</a></li>
+                <li><a href="#">Support</a></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <div class="footer-divider"></div>
+
+        <div class="footer-bottom">
+          <span class="copyright">© Copyright 2025, EcoHarvest All Rights Reserved</span>
+          <div class="legal-links">
+            <a href="#">FAQ</a>
+            <a href="#">Term of Service</a>
+            <a href="#">Privacy Policy</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="big-footer-text">EFARMGOOD</div>
+    </footer>
+
+    <script src="main.js"></script>
+  </body>
+</html>

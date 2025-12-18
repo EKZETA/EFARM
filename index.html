@@ -8,11 +8,9 @@
       href="https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;500;600;700;800&display=swap"
       rel="stylesheet"
     />
-
     <link rel="stylesheet" href="style.css" />
   </head>
   <body>
-    <!-- Navigation Bar -->
     <nav class="navbar">
       <div class="nav-container">
         <div class="nav-logo">
@@ -29,17 +27,21 @@
           <span>Efarm</span>
         </div>
         <ul class="nav-menu">
-          <li><a href="#" class="active">Home</a></li>
-          <li><a href="#">About Us</a></li>
-          <li><a href="#">Services</a></li>
-          <li><a href="#">Blog</a></li>
+          <li><a href="#home" class="active">Home</a></li>
+          <li><a href="#about">About Us</a></li>
+          <li><a href="#services">Services</a></li>
+          <li><a href="#blog">Blog</a></li>
         </ul>
         <button class="btn-contact">Contact Us</button>
+        <div class="hamburger">
+          <span></span>
+          <span></span>
+          <span></span>
+        </div>
       </div>
     </nav>
 
-    <!-- Hero Section -->
-    <header class="hero">
+    <header class="hero" id="home">
       <div class="hero-content">
         <div class="badge-12b">
           <svg
@@ -120,8 +122,7 @@
       </div>
     </header>
 
-    <!-- Pioneers Section -->
-    <section class="pioneers">
+    <section class="pioneers" id="about">
       <div class="container">
         <div class="pioneers-content">
           <div class="pioneers-text">
@@ -133,7 +134,10 @@
               Our journey began with a vision to transform the way we produce
               food by integrating modern technology with traditional farming
               values. Today, we are proud to empower farmers and agribusinesses
-              worldwide with innovative tools, data-driv...
+              worldwide with innovative tools, data-driven insights, and sustainable practices that not only increase productivity but also protect our planet for future generations.
+            </p>
+            <p class="pioneers-description">
+              Founded over a decade ago, Efarm has grown from a small startup to a leading provider of agricultural technology solutions. Our team of experts combines deep agricultural knowledge with cutting-edge technology to deliver solutions that make a real difference in the field.
             </p>
             <a href="#" class="btn-lime">
               Read More <span class="icon-arrow">&rarr;</span>
@@ -158,7 +162,6 @@
       </div>
     </section>
 
-    <!-- Statistics Section -->
     <section class="stats">
       <div class="container">
         <div class="stats-grid">
@@ -182,8 +185,7 @@
       </div>
     </section>
 
-    <!-- Services Section -->
-    <section class="services">
+    <section class="services" id="services">
       <div class="container">
         <div class="services-header">
           <div class="services-subtitle">Our Service</div>
@@ -202,27 +204,22 @@
         </div>
 
         <div class="services-accordion">
-          <!-- Service Item 1 -->
           <div class="service-item">
             <div class="service-header">
               <div class="service-title-wrapper">
                 <span class="service-number">01</span>
                 <span class="service-name">Precision Farming Solutions</span>
               </div>
-              <span class="service-toggle">−</span>
+              <span class="service-toggle">+</span>
             </div>
             <div class="service-content">
               <p class="service-text">
-                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ab
-                itaque, possimus, quibusdam accusamus consectetur magni
-                doloribus corrupti error rem consequatur exercitationem ullam
-                hic dolores, labore excepturi dolore minus. Dolorum, ipsam.
+                Leverage advanced GPS technology, drones, and data analytics to optimize every aspect of your farm. Our precision farming solutions provide detailed field mapping, variable rate application, and yield monitoring to maximize efficiency and reduce waste while improving crop quality.
               </p>
             </div>
           </div>
 
-          <!-- Service Item 2 - Expanded -->
-          <div class="service-item active">
+          <div class="service-item">
             <div class="service-header">
               <div class="service-title-wrapper">
                 <span class="service-number">02</span>
@@ -248,45 +245,36 @@
             </div>
           </div>
 
-          <!-- Service Item 3 -->
           <div class="service-item">
             <div class="service-header">
               <div class="service-title-wrapper">
                 <span class="service-number">03</span>
                 <span class="service-name">Crop Monitoring & Management</span>
               </div>
-              <span class="service-toggle">−</span>
+              <span class="service-toggle">+</span>
             </div>
             <div class="service-content">
               <p class="service-text">
-                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ab
-                itaque, possimus, quibusdam accusamus consectetur magni
-                doloribus corrupti error rem consequatur exercitationem ullam
-                hic dolores, labore excepturi dolore minus. Dolorum, ipsam.
+                Track your crops in real-time with satellite imagery and AI-powered analytics. Detect diseases early, monitor growth patterns, and receive actionable insights to protect your investment. Our comprehensive monitoring system helps you make informed decisions throughout the growing season.
               </p>
             </div>
           </div>
 
-          <!-- Service Item 4 -->
           <div class="service-item">
             <div class="service-header">
               <div class="service-title-wrapper">
                 <span class="service-number">04</span>
                 <span class="service-name">Soil Health Analysis</span>
               </div>
-              <span class="service-toggle">−</span>
+              <span class="service-toggle">+</span>
             </div>
             <div class="service-content">
               <p class="service-text">
-                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ab
-                itaque, possimus, quibusdam accusamus consectetur magni
-                doloribus corrupti error rem consequatur exercitationem ullam
-                hic dolores, labore excepturi dolore minus. Dolorum, ipsam.
+                Understand your soil's unique characteristics with our comprehensive testing and analysis services. We measure nutrient levels, pH balance, organic matter content, and microbial activity to create customized fertilization plans that improve soil health and boost productivity naturally.
               </p>
             </div>
           </div>
 
-          <!-- Service Item 5 -->
           <div class="service-item">
             <div class="service-header">
               <div class="service-title-wrapper">
@@ -295,14 +283,11 @@
                   >Agricultural Training & Consultancy</span
                 >
               </div>
-              <span class="service-toggle">−</span>
+              <span class="service-toggle">+</span>
             </div>
             <div class="service-content">
               <p class="service-text">
-                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ab
-                itaque, possimus, quibusdam accusamus consectetur magni
-                doloribus corrupti error rem consequatur exercitationem ullam
-                hic dolores, labore excepturi dolore minus. Dolorum, ipsam.
+                Empower your team with expert knowledge and best practices. Our training programs cover sustainable farming techniques, technology adoption, and business management. Work with experienced consultants who provide personalized guidance to help you achieve your agricultural goals.
               </p>
             </div>
           </div>
@@ -310,7 +295,7 @@
       </div>
     </section>
 
-    <section class="news">
+    <section class="news" id="blog">
       <div class="container">
         <div class="news-header">
           <div class="news-title">
@@ -482,7 +467,6 @@
       </div>
     </section>
 
-    <!-- CTA Newsletter Section -->
     <section class="cta-newsletter">
       <div class="cta-overlay"></div>
       <div class="container">
@@ -511,7 +495,6 @@
     <footer>
       <div class="container">
         <div class="footer-top">
-          <!-- Logo and Description -->
           <div class="footer-brand">
             <div class="footer-logo">E</div>
             <p class="footer-description">
@@ -520,26 +503,22 @@
             </p>
           </div>
 
-          <!-- Navigation Links -->
           <div class="footer-nav">
             <div class="nav-col">
               <h4>Company</h4>
               <ul>
-                <li><a href="#">Features</a></li>
-                <li><a href="#">Pricing</a></li>
-                <li><a href="#">About Us</a></li>
-                <li><a href="#">Contact</a></li>
-                <li><a href="#">Pricing</a></li>
+                <li><a href="#services">Features</a></li>
+                <li><a href="#about">About Us</a></li>
+                <li><a href="contact.html">Contact</a></li>
               </ul>
             </div>
             <div class="nav-col">
               <h4>Resource</h4>
               <ul>
-                <li><a href="#">Blog</a></li>
+                <li><a href="#blog">Blog</a></li>
                 <li><a href="#">Customer Stories</a></li>
                 <li><a href="#">Information</a></li>
                 <li><a href="#">Legal</a></li>
-                <li><a href="#">Payments</a></li>
               </ul>
             </div>
             <div class="nav-col">
