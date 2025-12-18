@@ -1,4 +1,5 @@
-document.addEventListener("DOMContentLoaded", () => {
+// Wait for components to load before initializing
+function initializeApp() {
   const accordionHeaders = document.querySelectorAll(".accordion-header");
 
   accordionHeaders.forEach((header) => {
@@ -50,13 +51,14 @@ document.addEventListener("DOMContentLoaded", () => {
       if (startTime === null) startTime = currentTime;
       const timeElapsed = currentTime - startTime;
       const progress = Math.min(timeElapsed / duration, 1);
-      
-      const ease = progress < 0.5
-        ? 4 * progress * progress * progress
-        : 1 - Math.pow(-2 * progress + 2, 3) / 2;
-      
+
+      const ease =
+        progress < 0.5
+          ? 4 * progress * progress * progress
+          : 1 - Math.pow(-2 * progress + 2, 3) / 2;
+
       window.scrollTo(0, start + distance * ease);
-      
+
       if (timeElapsed < duration) {
         requestAnimationFrame(animation);
       }
@@ -69,19 +71,22 @@ document.addEventListener("DOMContentLoaded", () => {
   navLinks.forEach((link) => {
     link.addEventListener("click", (e) => {
       const href = link.getAttribute("href");
-      
+
       if (href.startsWith("#") && href !== "#") {
         e.preventDefault();
         const targetId = href.substring(1);
         const targetSection = document.getElementById(targetId);
-        
+
         if (targetSection) {
           navLinks.forEach((l) => l.classList.remove("active"));
           link.classList.add("active");
-          
+
           const navbarHeight = document.querySelector(".navbar").offsetHeight;
-          const targetPosition = targetSection.getBoundingClientRect().top + window.pageYOffset - navbarHeight;
-          
+          const targetPosition =
+            targetSection.getBoundingClientRect().top +
+            window.pageYOffset -
+            navbarHeight;
+
           smoothScrollTo(targetPosition, 1200);
         }
       }
@@ -100,9 +105,9 @@ document.addEventListener("DOMContentLoaded", () => {
     btnSolutions.addEventListener("click", () => {
       const servicesSection = document.getElementById("services");
       if (servicesSection) {
-        servicesSection.scrollIntoView({ 
+        servicesSection.scrollIntoView({
           behavior: "smooth",
-          block: "start"
+          block: "start",
         });
       }
     });
@@ -243,4 +248,16 @@ document.addEventListener("DOMContentLoaded", () => {
       notification.remove();
     }, 300);
   }
+}
+
+// Initialize when components are loaded
+document.addEventListener("componentsLoaded", initializeApp);
+
+// Fallback: also listen to DOMContentLoaded for pages without components
+document.addEventListener("DOMContentLoaded", () => {
+  // If components haven't loaded yet, wait for them
+  if (!document.querySelector(".navbar")) {
+    return;
+  }
+  initializeApp();
 });
